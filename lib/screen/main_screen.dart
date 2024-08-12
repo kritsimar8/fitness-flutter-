@@ -48,7 +48,7 @@ class _MainScreenState extends State<MainScreen> {
                     Expanded(
                         child: Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: defaultPadding * 3,
+                          horizontal: defaultPadding * 1,
                           vertical: defaultPadding),
                       height: 90,
                       decoration: BoxDecoration(
@@ -132,11 +132,14 @@ class _MainScreenState extends State<MainScreen> {
                   ],
                 ),
               ),
-              Row(
-                children: [
-                 ContainerRing(title: 'Steps', number: '6930', subTitle: 'Distance \n4.73Km'),
-                    ContainerRing(title: 'Stress \nLevel', number: '18', subTitle: 'Weak')
-                ],
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                   ContainerRing(title: 'Steps', number: '6930', subTitle: 'Distance \n4.73Km'),
+                      ContainerRing(title: 'Stress \nLevel', number: '18', subTitle: 'Weak')
+                  ],
+                ),
               ),
               Padding(padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -337,426 +340,431 @@ class _MainScreenState extends State<MainScreen> {
                   ]
                 ),
               ),),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: defaultPadding*2,vertical: defaultPadding*2),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(vertical: defaultPadding,horizontal: defaultPadding),
-                          height: 135,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: primaryColor,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.white.withOpacity(0.1),
-                                offset: Offset(-5,-5),
-                                spreadRadius: 0,
-                                blurRadius: 10,
-                              ),
-                              BoxShadow(
-                                color: Colors.black54,
-                                offset: Offset(5,5),
-                                spreadRadius: 0,
-                                blurRadius: 10,
-                              ),
-                            ]
-                          ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 0,),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children:[
-                                    Text('7', style: GoogleFonts.ubuntu(
-                                      fontSize:30,
-                                      fontWeight: FontWeight.w800
-                                    ),),
-                                    SizedBox(
-                                      height: 30,
-                                      width: 30,
-                                      child: Image.asset('assets/icons/happy.png', color: gradientMiddle,),
-                                    )
-                                  ]
-                                ),
-                              ),
-                              Text('Body\nscore',style: GoogleFonts.ubuntu(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800,
-                              ),)
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: defaultPadding*2,),
-                        Container(
-                          padding: EdgeInsets.symmetric(vertical: defaultPadding,horizontal: defaultPadding),
-                          height: 120,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: primaryColor,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.white.withOpacity(0.1),
-                                offset: Offset(-5,-5),
-                                spreadRadius: 0,
-                                blurRadius: 10,
-                              ),
-                              BoxShadow(
-                                color: Colors.black54,
-                                offset: Offset(5,5),
-                                spreadRadius: 0,
-                                blurRadius: 10,
-                              ),
-                            ]
-                          ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: defaultPadding/2,),
-                               child:  Text('0',style: GoogleFonts.ubuntu(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800,
-                              ),)
-                              ),
-                              Text(
-                                'Calories',
-                                style: GoogleFonts.ubuntu(
-                                  fontSize: 20, fontWeight: FontWeight.w800
-                                ),
-                              )
-                             
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: defaultPadding*2,),
-                         Container(
-                          padding: EdgeInsets.symmetric(vertical: defaultPadding,horizontal: defaultPadding),
-                          height: 120,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: primaryColor,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.white.withOpacity(0.1),
-                                offset: Offset(-5,-5),
-                                spreadRadius: 0,
-                                blurRadius: 10,
-                              ),
-                              BoxShadow(
-                                color: Colors.black54,
-                                offset: Offset(5,5),
-                                spreadRadius: 0,
-                                blurRadius: 10,
-                              ),
-                            ]
-                          ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: defaultPadding/2,),
-                               child:  Text('99%',style: GoogleFonts.ubuntu(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800,
-                              ),)
-                              ),
-                              Text(
-                                'SpOz',
-                                style: GoogleFonts.ubuntu(
-                                  fontSize: 20, fontWeight: FontWeight.w800
-                                ),
-                              )
-                             
-                            ],
-                          ),
-                        ),
-        
-                      ],
-                    ),  
-                    SizedBox(width: defaultPadding*2,),
-                    Expanded(
-                      child: Container(
-                        height: 420,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          color: primaryColor,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.white.withOpacity(0.1),
-                              offset: Offset(-5,-5),
-                              spreadRadius: 0,
-                              blurRadius: 10,
-                            ),
-                           const BoxShadow(
-                              color: Colors.black54,
-                              offset: Offset(5,5),
-                              spreadRadius: 0,
-                              blurRadius: 5
-                            )
-                          ]
-                        ),
-                      child: Column(
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: defaultPadding,vertical: defaultPadding*2),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            padding: EdgeInsets.all(5),
-                            height: 40,
-                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(vertical: defaultPadding,horizontal: defaultPadding),
+                            height: 135,
+                            width: 120,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
-                              ),
-                              color: gradientMiddle
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                              color: primaryColor,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.white.withOpacity(0.1),
+                                  offset: Offset(-5,-5),
+                                  spreadRadius: 0,
+                                  blurRadius: 10,
+                                ),
+                                BoxShadow(
+                                  color: Colors.black54,
+                                  offset: Offset(5,5),
+                                  spreadRadius: 0,
+                                  blurRadius: 10,
+                                ),
+                              ]
                             ),
-                            child: Text('Activities',style: GoogleFonts.ubuntu(
-                              fontSize: 20, fontWeight: FontWeight.w800
-                            ),),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: defaultPadding,
-                              right: defaultPadding,
-                              top: defaultPadding*2
-                            ),
-                            child: Row(
+                            child: Column(
                               children: [
-                                Expanded(
-                                  child: Container(
-                                    padding: EdgeInsets.symmetric(vertical: defaultPadding),
-                                    height: 120,
-                                    width: 120,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                                      color: primaryColor,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.white.withOpacity(0.1),
-                                          offset: Offset(-2, -2),
-                                          spreadRadius: 0,
-                                          blurRadius: 5
-                                        ),
-                                        BoxShadow(
-                                          color: Colors.black54,
-                                          offset: Offset(10, 10),
-                                          spreadRadius: 0,
-                                          blurRadius: 10
-                                        )
-                                      ]
-                                    ),
-                                    child: Column(children: [
-                                      Text(
-                                        '2',
-                                        style: GoogleFonts.ubuntu(
-                                          fontSize: 26,
-                                          fontWeight: FontWeight.w800
-                                        ),
-                                      ),
-                                      Text(
-                                        'Workout for \nthis week',
-                                        style: GoogleFonts.ubuntu(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w800
-                                        )
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 0,),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children:[
+                                      Text('7', style: GoogleFonts.ubuntu(
+                                        fontSize:30,
+                                        fontWeight: FontWeight.w800
+                                      ),),
+                                      SizedBox(
+                                        height: 30,
+                                        width: 30,
+                                        child: Image.asset('assets/icons/happy.png', color: gradientMiddle,),
                                       )
-                                    ],),
-                                  )
+                                    ]
                                   ),
-                                  SizedBox(width: defaultPadding,),
-                                   Expanded(
-                                  child: Container(
-                                    padding: EdgeInsets.symmetric(vertical: defaultPadding,horizontal: defaultPadding),
-                                    height: 120,
-                                    width: 120,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                                      color: primaryColor,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.white.withOpacity(0.1),
-                                          offset: Offset(-2, -2),
-                                          spreadRadius: 0,
-                                          blurRadius: 5
-                                        ),
-                                        BoxShadow(
-                                          color: Colors.black54,
-                                          offset: Offset(10, 10),
-                                          spreadRadius: 0,
-                                          blurRadius: 10
-                                        )
-                                      ]
-                                    ),
-                                    child: Column(children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(bottom: defaultPadding/2),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Text(
-                                              '180',
-                                              style: GoogleFonts.ubuntu(
-                                                fontSize: 26,
-                                                fontWeight: FontWeight.w800
-                                              ),
-                                            ),
-                                             Text(
-                                        'min',
-                                        style: GoogleFonts.ubuntu(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w800
-                                        )
-                                      )
-                                          ],
-                                        ),
-                                      ),
-                                      Text(
-                                        'Workout\nduration',
-                                        style: GoogleFonts.ubuntu(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.w800
-                                        ),
-                                      )
-                                     
-                                    ],),
-                                  )
-                                  ),
-                            
+                                ),
+                                Text('Body\nscore',style: GoogleFonts.ubuntu(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w800,
+                                ),)
                               ],
                             ),
                           ),
-                          SizedBox(height: defaultPadding*2,),
+                          SizedBox(width: defaultPadding*2,),
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: defaultPadding),
-                            height: 70,
+                            padding: EdgeInsets.symmetric(vertical: defaultPadding,horizontal: defaultPadding),
+                            height: 120,
+                            width: 120,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(20)),
                               color: primaryColor,
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.white.withOpacity(0.1),
-                                  offset: Offset(-2,-2),
+                                  offset: Offset(-5,-5),
                                   spreadRadius: 0,
                                   blurRadius: 10,
                                 ),
                                 BoxShadow(
                                   color: Colors.black54,
-                                  offset: Offset(10,10),
+                                  offset: Offset(5,5),
                                   spreadRadius: 0,
                                   blurRadius: 10,
-                                )
+                                ),
                               ]
                             ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            child: Column(
                               children: [
-                              Container(
-                                height: 60,
-                                width: 60,
-                                child: Stack(
-                                  children:[
-                                    Center(
-                                      child: Container(
-                                        height: 15,
-                                        width: 15,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Color.fromARGB(255, 3, 237, 179)
-                                        ),
-                                      ),
-                                    ),
-                                  
-                                  ]
-                                )
-                              ),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: defaultPadding/2,),
+                                 child:  Text('0',style: GoogleFonts.ubuntu(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w800,
+                                ),)
+                                ),
                                 Text(
-                                      'Dancing\n00:51:20',
-                                      style: GoogleFonts.ubuntu(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                    Text(
-                                      '7\nMarch',
-                                      style: GoogleFonts.ubuntu(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w800
-                                      ),
-                                    )
-                            ],)
+                                  'Calories',
+                                  style: GoogleFonts.ubuntu(
+                                    fontSize: 20, fontWeight: FontWeight.w800
+                                  ),
+                                )
+                               
+                              ],
+                            ),
                           ),
-                          const SizedBox(height: defaultPadding*2,),
+                          SizedBox(width: defaultPadding*2,),
                            Container(
-                            padding: EdgeInsets.symmetric(horizontal: defaultPadding),
-                            height: 70,
+                            padding: EdgeInsets.symmetric(vertical: defaultPadding,horizontal: defaultPadding),
+                            height: 120,
+                            width: 120,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(20)),
                               color: primaryColor,
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.white.withOpacity(0.1),
-                                  offset: Offset(-2,-2),
+                                  offset: Offset(-5,-5),
                                   spreadRadius: 0,
                                   blurRadius: 10,
                                 ),
                                 BoxShadow(
                                   color: Colors.black54,
-                                  offset: Offset(10,10),
+                                  offset: Offset(5,5),
                                   spreadRadius: 0,
                                   blurRadius: 10,
-                                )
+                                ),
                               ]
                             ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            child: Column(
                               children: [
-                              Container(
-                                height: 60,
-                                width: 60,
-                                child: Stack(
-                                  children:[
-                                    Center(
-                                      child: Container(
-                                        height: 15,
-                                        width: 15,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Color.fromARGB(255, 3, 237, 179)
-                                        ),
-                                      ),
-                                    ),
-                                  
-                                  ]
-                                )
-                              ),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: defaultPadding/2,),
+                                 child:  Text('99%',style: GoogleFonts.ubuntu(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w800,
+                                ),)
+                                ),
                                 Text(
-                                      'Dancing\n00:51:20',
-                                      style: GoogleFonts.ubuntu(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w800,
-                                      ),
-                                    ),
-                                    Text(
-                                      '7\nMarch',
-                                      style: GoogleFonts.ubuntu(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w800
-                                      ),
-                                    )
-                            ],)
-                          )
-
+                                  'SpOz',
+                                  style: GoogleFonts.ubuntu(
+                                    fontSize: 20, fontWeight: FontWeight.w800
+                                  ),
+                                )
+                               
+                              ],
+                            ),
+                          ),
+                        
                         ],
-                      ),
-
-                      ))  
-                  ],
-                ),
-                )
+                      ),  
+                     
+                    ],
+                  ),
+                  ),
+              ),
+              // SizedBox(width: defaultPadding*2,),
+                      // Expanded(
+                      //   child: Container(
+                      //     height: 420,
+                      //     decoration: BoxDecoration(
+                      //       borderRadius: BorderRadius.all(Radius.circular(20)),
+                      //       color: primaryColor,
+                      //       boxShadow: [
+                      //         BoxShadow(
+                      //           color: Colors.white.withOpacity(0.1),
+                      //           offset: Offset(-5,-5),
+                      //           spreadRadius: 0,
+                      //           blurRadius: 10,
+                      //         ),
+                      //        const BoxShadow(
+                      //           color: Colors.black54,
+                      //           offset: Offset(5,5),
+                      //           spreadRadius: 0,
+                      //           blurRadius: 5
+                      //         )
+                      //       ]
+                      //     ),
+                      //   child: Column(
+                      //     children: [
+                      //       Container(
+                      //         padding: EdgeInsets.all(5),
+                      //         height: 40,
+                      //         width: double.infinity,
+                      //         decoration: BoxDecoration(
+                      //           borderRadius: BorderRadius.only(
+                      //             topLeft: Radius.circular(20),
+                      //             topRight: Radius.circular(20),
+                      //           ),
+                      //           color: gradientMiddle
+                      //         ),
+                      //         child: Text('Activities',style: GoogleFonts.ubuntu(
+                      //           fontSize: 20, fontWeight: FontWeight.w800
+                      //         ),),
+                      //       ),
+                      //       Padding(
+                      //         padding: const EdgeInsets.only(
+                      //           left: defaultPadding,
+                      //           right: defaultPadding,
+                      //           top: defaultPadding*2
+                      //         ),
+                      //         child: Row(
+                      //           children: [
+                      //             Expanded(
+                      //               child: Container(
+                      //                 padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                      //                 height: 120,
+                      //                 width: 120,
+                      //                 decoration: BoxDecoration(
+                      //                   borderRadius: BorderRadius.all(Radius.circular(20)),
+                      //                   color: primaryColor,
+                      //                   boxShadow: [
+                      //                     BoxShadow(
+                      //                       color: Colors.white.withOpacity(0.1),
+                      //                       offset: Offset(-2, -2),
+                      //                       spreadRadius: 0,
+                      //                       blurRadius: 5
+                      //                     ),
+                      //                     BoxShadow(
+                      //                       color: Colors.black54,
+                      //                       offset: Offset(10, 10),
+                      //                       spreadRadius: 0,
+                      //                       blurRadius: 10
+                      //                     )
+                      //                   ]
+                      //                 ),
+                      //                 child: Column(children: [
+                      //                   Text(
+                      //                     '2',
+                      //                     style: GoogleFonts.ubuntu(
+                      //                       fontSize: 26,
+                      //                       fontWeight: FontWeight.w800
+                      //                     ),
+                      //                   ),
+                      //                   Text(
+                      //                     'Workout for \nthis week',
+                      //                     style: GoogleFonts.ubuntu(
+                      //                       fontSize: 16,
+                      //                       fontWeight: FontWeight.w800
+                      //                     )
+                      //                   )
+                      //                 ],),
+                      //               )
+                      //               ),
+                      //               SizedBox(width: defaultPadding,),
+                      //                Expanded(
+                      //               child: Container(
+                      //                 padding: EdgeInsets.symmetric(vertical: defaultPadding,horizontal: defaultPadding),
+                      //                 height: 120,
+                      //                 width: 120,
+                      //                 decoration: BoxDecoration(
+                      //                   borderRadius: BorderRadius.all(Radius.circular(20)),
+                      //                   color: primaryColor,
+                      //                   boxShadow: [
+                      //                     BoxShadow(
+                      //                       color: Colors.white.withOpacity(0.1),
+                      //                       offset: Offset(-2, -2),
+                      //                       spreadRadius: 0,
+                      //                       blurRadius: 5
+                      //                     ),
+                      //                     BoxShadow(
+                      //                       color: Colors.black54,
+                      //                       offset: Offset(10, 10),
+                      //                       spreadRadius: 0,
+                      //                       blurRadius: 10
+                      //                     )
+                      //                   ]
+                      //                 ),
+                      //                 child: Column(children: [
+                      //                   Padding(
+                      //                     padding: const EdgeInsets.only(bottom: defaultPadding/2),
+                      //                     child: Row(
+                      //                       mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      //                       children: [
+                      //                         Text(
+                      //                           '180',
+                      //                           style: GoogleFonts.ubuntu(
+                      //                             fontSize: 26,
+                      //                             fontWeight: FontWeight.w800
+                      //                           ),
+                      //                         ),
+                      //                          Text(
+                      //                     'min',
+                      //                     style: GoogleFonts.ubuntu(
+                      //                       fontSize: 16,
+                      //                       fontWeight: FontWeight.w800
+                      //                     )
+                      //                   )
+                      //                       ],
+                      //                     ),
+                      //                   ),
+                      //                   Text(
+                      //                     'Workout\nduration',
+                      //                     style: GoogleFonts.ubuntu(
+                      //                       fontSize: 13,
+                      //                       fontWeight: FontWeight.w800
+                      //                     ),
+                      //                   )
+                                       
+                      //                 ],),
+                      //               )
+                      //               ),
+                              
+                      //           ],
+                      //         ),
+                      //       ),
+                      //       SizedBox(height: defaultPadding*2,),
+                      //       Container(
+                      //         padding: EdgeInsets.symmetric(horizontal: defaultPadding),
+                      //         height: 70,
+                      //         decoration: BoxDecoration(
+                      //           borderRadius: BorderRadius.all(Radius.circular(20)),
+                      //           color: primaryColor,
+                      //           boxShadow: [
+                      //             BoxShadow(
+                      //               color: Colors.white.withOpacity(0.1),
+                      //               offset: Offset(-2,-2),
+                      //               spreadRadius: 0,
+                      //               blurRadius: 10,
+                      //             ),
+                      //             BoxShadow(
+                      //               color: Colors.black54,
+                      //               offset: Offset(10,10),
+                      //               spreadRadius: 0,
+                      //               blurRadius: 10,
+                      //             )
+                      //           ]
+                      //         ),
+                      //         child: Row(
+                      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //           children: [
+                      //           Container(
+                      //             height: 60,
+                      //             width: 60,
+                      //             child: Stack(
+                      //               children:[
+                      //                 Center(
+                      //                   child: Container(
+                      //                     height: 15,
+                      //                     width: 15,
+                      //                     decoration: BoxDecoration(
+                      //                       shape: BoxShape.circle,
+                      //                       color: Color.fromARGB(255, 3, 237, 179)
+                      //                     ),
+                      //                   ),
+                      //                 ),
+                                    
+                      //               ]
+                      //             )
+                      //           ),
+                      //             Text(
+                      //                   'Dancing\n00:51:20',
+                      //                   style: GoogleFonts.ubuntu(
+                      //                     fontSize: 18,
+                      //                     fontWeight: FontWeight.w800,
+                      //                   ),
+                      //                 ),
+                      //                 Text(
+                      //                   '7\nMarch',
+                      //                   style: GoogleFonts.ubuntu(
+                      //                     fontSize: 16,
+                      //                     fontWeight: FontWeight.w800
+                      //                   ),
+                      //                 )
+                      //         ],)
+                      //       ),
+                      //       const SizedBox(height: defaultPadding*2,),
+                      //        Container(
+                      //         padding: EdgeInsets.symmetric(horizontal: defaultPadding),
+                      //         height: 70,
+                      //         decoration: BoxDecoration(
+                      //           borderRadius: BorderRadius.all(Radius.circular(20)),
+                      //           color: primaryColor,
+                      //           boxShadow: [
+                      //             BoxShadow(
+                      //               color: Colors.white.withOpacity(0.1),
+                      //               offset: Offset(-2,-2),
+                      //               spreadRadius: 0,
+                      //               blurRadius: 10,
+                      //             ),
+                      //             BoxShadow(
+                      //               color: Colors.black54,
+                      //               offset: Offset(10,10),
+                      //               spreadRadius: 0,
+                      //               blurRadius: 10,
+                      //             )
+                      //           ]
+                      //         ),
+                      //         child: Row(
+                      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //           children: [
+                      //           Container(
+                      //             height: 60,
+                      //             width: 60,
+                      //             child: Stack(
+                      //               children:[
+                      //                 Center(
+                      //                   child: Container(
+                      //                     height: 15,
+                      //                     width: 15,
+                      //                     decoration: BoxDecoration(
+                      //                       shape: BoxShape.circle,
+                      //                       color: Color.fromARGB(255, 3, 237, 179)
+                      //                     ),
+                      //                   ),
+                      //                 ),
+                                    
+                      //               ]
+                      //             )
+                      //           ),
+                      //             Text(
+                      //                   'Dancing\n00:51:20',
+                      //                   style: GoogleFonts.ubuntu(
+                      //                     fontSize: 18,
+                      //                     fontWeight: FontWeight.w800,
+                      //                   ),
+                      //                 ),
+                      //                 Text(
+                      //                   '7\nMarch',
+                      //                   style: GoogleFonts.ubuntu(
+                      //                     fontSize: 16,
+                      //                     fontWeight: FontWeight.w800
+                      //                   ),
+                      //                 )
+                      //         ],)
+                      //       )
+                
+                      //     ],
+                      //   ),
+                
+                      //   ))  
             ],
           ),
         ),
